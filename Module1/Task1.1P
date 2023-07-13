@@ -13,10 +13,10 @@ void loop()
 
   if(digitalVal == HIGH)//If button is on:
   {
-    digitalWrite(Led, HIGH); //Turn the LED off
+    digitalWrite(Led, HIGH); //Turn the LED on
   }
   else
   {
-    digitalWrite(Led, LOW);//Turn the LED on
+    digitalWrite(Led, LOW);//Turn the LED off
   }
 }
