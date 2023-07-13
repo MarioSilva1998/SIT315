@@ -1,0 +1,22 @@
+const int Led = 2; //Sets Led Pin
+const int Button = 4; //Sets Button pin
+
+void setup()
+{
+  pinMode(Button,INPUT); // Set the Button as an input
+  pinMode(Led,OUTPUT); // Set the LED Pin as an output
+}
+
+void loop()
+{
+  int digitalVal = digitalRead(Button); //Assigns reading from button to a variable
+
+  if(digitalVal == HIGH)//If button is on:
+  {
+    digitalWrite(Led, HIGH); //Turn the LED off
+  }
+  else
+  {
+    digitalWrite(Led, LOW);//Turn the LED on
+  }
+}
