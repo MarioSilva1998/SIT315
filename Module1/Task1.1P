@@ -3,6 +3,7 @@ const int Button = 4; //Sets Button pin
 
 void setup()
 {
+  Serial.begin(9600);
   pinMode(Button,INPUT); // Set the Button as an input
   pinMode(Led,OUTPUT); // Set the LED Pin as an output
 }
@@ -14,9 +15,11 @@ void loop()
   if(digitalVal == HIGH)//If button is on:
   {
     digitalWrite(Led, HIGH); //Turn the LED on
+    Serial.println("LED is on");
   }
   else
   {
     digitalWrite(Led, LOW);//Turn the LED off
+    Serial.println("LED is off");
   }
 }
