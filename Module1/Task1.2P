@@ -1,0 +1,39 @@
+const int Led = 2; //Sets Led Pin
+const int Button = 3; //Sets Button pin
+
+
+// Globals
+int Led_state = LOW;
+int Button_prev = HIGH;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(Button,INPUT); // Set the Button as an input
+  pinMode(Led,OUTPUT); // Set the LED Pin as an output
+  
+  attachInterrupt(digitalPinToInterrupt(Button), buttonInterrupt, CHANGE);
+}
+
+void loop()
+{
+  
+}
+
+void buttonInterrupt()
+{
+  int digitalVal = digitalRead(Button); //Assigns reading from button to a variable
+
+  if(digitalVal == HIGH)//If button is on:
+  {
+    digitalWrite(Led, HIGH); //Turn the LED on
+    Serial.println("LED is on");
+  }
+  else
+  {
+    digitalWrite(Led, LOW);//Turn the LED off
+    Serial.println("LED is off");
+  }
+} 
+
